@@ -1,6 +1,7 @@
 package Term::ANSIColor::Tag::Parser;
 use strict;
 use warnings;
+use Carp qw(croak);
 use base qw(
     HTML::Parser
     Class::Accessor::Lvalue::Fast
@@ -40,7 +41,8 @@ sub text {
 sub end {
     my ($self, $tagname, $text) = @_;
     if (my $color = $self->get_escape_sequence($tagname)) {
-        pop @{$self->stack};
+        my $top = pop @{$self->stack};
+        croak 'Invalid end tag was found' if $top ne $tagname;
         $self->result .= RESET;
         if (scalar @{$self->stack}) {
             $self->result .= $self->get_escape_sequence($self->stack->[-1]);

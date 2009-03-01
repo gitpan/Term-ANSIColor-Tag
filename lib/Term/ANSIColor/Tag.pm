@@ -5,7 +5,7 @@ use warnings;
 use Term::ANSIColor::Tag::Parser;
 use base qw(Class::Accessor::Lvalue::Fast);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_accessors(qw(parser text));
 
@@ -76,8 +76,10 @@ Creates and returns a new Term::ANSIColor::Tag object.
 
   $parser->parse($text);
 
-Parses given C<$text>. Note that "<" and ">" must be escaped into
-"&lt;" and "&gt;".
+Parses given C<$text>. If start tag and end tag aren't correspondent
+with each other, this method croaks immediately.
+
+Note that "<" and ">" must be escaped into "&lt;" and "&gt;".
 
 =back
 

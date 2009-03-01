@@ -10,6 +10,7 @@ requires 'Class::Accessor::Lvalue::Fast';
 requires 'HTML::Parser';
 
 build_requires 'Test::More';
+build_requires 'Test::Exception';
 use_test_base;
 author_tests   'xt';
 auto_include_deps;
