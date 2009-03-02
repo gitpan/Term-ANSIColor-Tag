@@ -6,5 +6,5 @@ use Term::ANSIColor::Tag;
 
 dies_ok {
     Term::ANSIColor::Tag->colorize(q{<red>foo</blue>});
-}, 'Invalid end tag';
-like $@, qr{Invalid end tag was found}, 'Invalid end tag';
+} 'Invalid end tag';
+like $@, qr{^Invalid end tag was found: </blue>}, 'Invalid end tag';

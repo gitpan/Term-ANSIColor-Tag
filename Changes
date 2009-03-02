@@ -1,5 +1,8 @@
 Revision history for Perl extension Term::ANSIColor::Tag
 
+0.04    Sun Mar  2 09:09:52 2009
+        - now error message provides appropriate information.
+
 0.03    Sun Mar  2 09:05:26 2009
         - removed unnecessary codes from parser.
 
