@@ -8,7 +8,6 @@ use base qw(
 );
 
 use Term::ANSIColor;
-local $Term::ANSIColor::AUTORESET = 1;
 
 use constant RESET => "\e[0m";
 
@@ -60,6 +59,7 @@ sub get_escape_sequence {
         if (lc $name eq lc $key) {
             $escape_sequence = sprintf "\e[%dm",
                                        $Term::ANSIColor::ATTRIBUTES{$key};
+            last;
         }
     }
     $escape_sequence;

@@ -1,5 +1,8 @@
 Revision history for Perl extension Term::ANSIColor::Tag
 
+0.03    Sun Mar  2 09:05:26 2009
+        - removed unnecessary codes from parser.
+
 0.02    Sun Mar  2 03:21:20 2009
         - parse() method now croaks if start tag and end tag aren't
           correspondent with each other.

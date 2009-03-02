@@ -5,7 +5,7 @@ use warnings;
 use Term::ANSIColor::Tag::Parser;
 use base qw(Class::Accessor::Lvalue::Fast);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 __PACKAGE__->mk_accessors(qw(parser text));
 
